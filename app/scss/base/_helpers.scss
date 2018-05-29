@@ -1,0 +1,27 @@
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+
