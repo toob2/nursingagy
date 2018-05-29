@@ -10,14 +10,16 @@ header {
   display: flex; 
   justify-content: space-between;
   align-items: center;
-  
+  position: relative;
+    
     @media only screen and (min-width: $breakpoint-medium){
       width: 75%;
       margin: 0% auto;
     }
 
   &__logo {
-    font-size: calc(#{$header-height}*0.5);
+    margin-left: 3%;
+    font-size: calc(#{$header-height}*0.4);
   }
 
   &__list {
@@ -30,32 +32,62 @@ header {
     } 
 
     &--mobile {
+      background-color: $color-primary;
       display: flex;
+      align-items: center;
       flex-direction: column;
       list-style-type: none;
-      
+      width: 100%;
+      position: absolute;
+      margin-top: calc(.98*#{$header-height});
+                  
         @media only screen and (min-width: $breakpoint-medium){
+        position: absolute;
+        right:0;
+        max-width: 80%;          
         display: flex;
         flex-direction: row;
+        justify-content: flex-end;
+        margin-top: 0;
         }
     }
   }
 
   &__item {
+    
+    @media only screen and (min-width: $breakpoint-medium){
     margin-left: 2rem;
+    }
   }
 
   &__link {
     height: $header-height;
     text-decoration: none;
     color: black;
+
+      &:hover {
+        color: $color-tertiary;
+        text-decoration: underline;
+      }
+
+      &--logo {
+        text-decoration: none;
+        color: black; 
+      }
   }
 
   &__toggler {
-      height: 100%;
-    
-    @media only screen and (min-width: $breakpoint-medium){
-    display: none;
-  }
+    text-decoration: none;
+    color: black;
+    margin-right: 4%;
+
+      &--link {
+        text-decoration: none;
+        color: black;
+      }
+      
+      @media only screen and (min-width: $breakpoint-medium){
+      display: none;
+      }
   }
 }
