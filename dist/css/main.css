@@ -1,3 +1,9 @@
+@keyframes dropDown {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
  * Since `*` has a specificity of 0, it does not override the `html` value
@@ -16,20 +22,13 @@ html {
   font-size: 62.5%;
   font-family: "Roboto", sans-serif; }
 
-/**
- * Basic typography style for copy text
- */
-body {
-  color: black;
-  font: 66%; }
-
 .clearfix::after {
   clear: both;
   content: '';
   display: table; }
 
 .container {
-  width: 75%;
+  width: 80%;
   margin: 0 auto; }
 
 .u-center-text {
@@ -44,11 +43,17 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.5rem; }
 
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: black;
+  font: 66%; }
+
 header {
   background-color: #b7b8b9;
   color: #000;
-  height: 10rem;
-  font-size: calc(10rem*0.2); }
+  font-size: calc(15rem*0.2); }
 
 .nav {
   height: 100%;
@@ -58,11 +63,11 @@ header {
   position: relative; }
   @media only screen and (min-width: 768px) {
     .nav {
-      width: 75%;
+      width: 80%;
       margin: 0% auto; } }
   .nav__logo {
     margin-left: 3%;
-    font-size: calc(10rem*0.4); }
+    font-size: calc(15rem*0.4); }
   .nav__list {
     display: none; }
     @media only screen and (min-width: 768px) {
@@ -71,28 +76,32 @@ header {
         flex-direction: row;
         list-style-type: none; } }
     .nav__list--mobile {
+      list-style-type: none;
       background-color: #b7b8b9;
       display: flex;
       align-items: center;
       flex-direction: column;
-      list-style-type: none;
       width: 100%;
-      position: absolute;
-      margin-top: calc(.98*10rem); }
+      position: fixed;
+      top: 0;
+      height: 100%;
+      animation: dropDown 0.5s ease-out;
+      padding-top: 60%; }
       @media only screen and (min-width: 768px) {
         .nav__list--mobile {
           position: absolute;
           right: 0;
-          max-width: 80%;
+          max-width: 70%;
           display: flex;
           flex-direction: row;
           justify-content: flex-end;
-          margin-top: 0; } }
+          margin-top: 0;
+          padding-top: 0; } }
   @media only screen and (min-width: 768px) {
     .nav__item {
       margin-left: 2rem; } }
   .nav__link {
-    height: 10rem;
+    height: 15rem;
     text-decoration: none;
     color: black; }
     .nav__link:hover {
@@ -104,10 +113,16 @@ header {
   .nav__toggler {
     text-decoration: none;
     color: black;
-    margin-right: 4%; }
+    margin-right: 4%;
+    z-index: 1; }
     .nav__toggler--link {
       text-decoration: none;
       color: black; }
     @media only screen and (min-width: 768px) {
       .nav__toggler {
         display: none; } }
+
+.section-landing {
+  padding-top: 10rem;
+  background-color: red;
+  background-image: url(images/main.jpg); }
