@@ -51,9 +51,10 @@ body {
   font: 66%; }
 
 header {
+  height: 10rem;
   background-color: #b7b8b9;
   color: #000;
-  font-size: calc(15rem*0.2); }
+  font-size: 2rem; }
 
 .nav {
   height: 100%;
@@ -67,14 +68,16 @@ header {
       margin: 0% auto; } }
   .nav__logo {
     margin-left: 3%;
-    font-size: calc(15rem*0.4); }
+    font-size: 5rem; }
   .nav__list {
     display: none; }
     @media only screen and (min-width: 768px) {
       .nav__list {
+        list-style-type: none;
         display: flex;
         flex-direction: row;
-        list-style-type: none; } }
+        justify-content: flex-end;
+        height: 100%; } }
     .nav__list--mobile {
       list-style-type: none;
       background-color: #b7b8b9;
@@ -86,7 +89,11 @@ header {
       top: 0;
       height: 100%;
       animation: dropDown 0.5s ease-out;
-      padding-top: 60%; }
+      padding-top: 28rem;
+      font-size: 4rem; }
+      @media only screen and (max-height: 670px) {
+        .nav__list--mobile {
+          padding-top: 22rem; } }
       @media only screen and (min-width: 768px) {
         .nav__list--mobile {
           position: absolute;
@@ -96,31 +103,69 @@ header {
           flex-direction: row;
           justify-content: flex-end;
           margin-top: 0;
-          padding-top: 0; } }
-  @media only screen and (min-width: 768px) {
-    .nav__item {
-      margin-left: 2rem; } }
+          padding-top: 0;
+          height: 100%;
+          font-size: 2rem; } }
+  .nav__item {
+    display: flex;
+    text-align: center; }
+    @media only screen and (min-width: 768px) {
+      .nav__item {
+        margin-left: 2rem;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end; } }
   .nav__link {
-    height: 15rem;
     text-decoration: none;
-    color: black; }
+    color: black;
+    width: 100vw;
+    padding: 0 1rem; }
+    @media only screen and (min-width: 768px) {
+      .nav__link {
+        width: 100%;
+        display: flex;
+        align-items: center; } }
     .nav__link:hover {
-      color: #717172;
-      text-decoration: underline; }
+      background-color: #717172; }
     .nav__link--logo {
       text-decoration: none;
       color: black; }
   .nav__toggler {
+    display: block;
+    cursor: pointer;
+    padding: 1.5rem 4rem 1.5rem 0rem;
+    height: 4rem;
+    width: 5rem;
     text-decoration: none;
-    color: black;
     margin-right: 4%;
     z-index: 1; }
-    .nav__toggler--link {
-      text-decoration: none;
-      color: black; }
     @media only screen and (min-width: 768px) {
       .nav__toggler {
         display: none; } }
+    .nav__toggler span,
+    .nav__toggler span:before,
+    .nav__toggler span:after {
+      cursor: pointer;
+      border-radius: 1px;
+      height: 0.65rem;
+      width: 5rem;
+      background: black;
+      position: absolute;
+      display: block;
+      content: '';
+      transition: all 300ms ease-in-out; }
+    .nav__toggler span:before {
+      top: -1rem; }
+    .nav__toggler span:after {
+      bottom: -1rem; }
+    .nav__toggler .active {
+      background-color: transparent; }
+      .nav__toggler .active:before, .nav__toggler .active:after {
+        top: 0; }
+      .nav__toggler .active:before {
+        transform: rotate(45deg); }
+      .nav__toggler .active:after {
+        transform: rotate(-45deg); }
 
 .section-landing {
   padding-top: 10rem;

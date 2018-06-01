@@ -1,7 +1,8 @@
 header {
+  height: 10rem;
   background-color: $color-primary;
   color: $color-black;
-  font-size: calc(#{$header-height}*0.2);
+  font-size: 2rem;
 }
 
 .nav {
@@ -18,16 +19,18 @@ header {
 
   &__logo {
     margin-left: 3%;
-    font-size: calc(#{$header-height}*0.4);
+    font-size: 5rem;
   }
 
   &__list {
     display: none;
-        
+            
     @media only screen and (min-width: $breakpoint-medium){
+      list-style-type: none;
       display: flex;
       flex-direction: row;
-      list-style-type: none;
+      justify-content: flex-end;
+      height: 100%;
     } 
 
     &--mobile {
@@ -41,38 +44,56 @@ header {
       top: 0;
       height: 100%;
       animation: dropDown 0.5s ease-out;
-      padding-top: 60%;
-                        
+      padding-top: 28rem; 
+      font-size: 4rem;
+
+        @media only screen and (max-height: 670px) {
+          padding-top: 22rem; 
+          }
+                          
         @media only screen and (min-width: $breakpoint-medium){
-        position: absolute;
-        right:0;
-        max-width: 70%;          
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        margin-top: 0;
-        padding-top: 0;
+          position: absolute;
+          right:0;
+          max-width: 70%;          
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          margin-top: 0;
+          padding-top: 0;
+          height: 100%;
+          font-size: 2rem
         }
     }
   }
 
   &__item {
-    
-    @media only screen and (min-width: $breakpoint-medium){
-    margin-left: 2rem;
+    display: flex;
+    text-align: center;
+            
+      @media only screen and (min-width: $breakpoint-medium){
+      margin-left: 2rem;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
     }
   }
 
   &__link {
-    height: $header-height;
     text-decoration: none;
     color: black;
+    width: 100vw;
+    padding: 0 1rem;
 
-      &:hover {
-        color: $color-tertiary;
-        text-decoration: underline;
-      }
-
+    @media only screen and (min-width: $breakpoint-medium){
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+    
+    &:hover {
+      background-color: $color-tertiary;
+    }
+       
       &--logo {
         text-decoration: none;
         color: black; 
@@ -80,18 +101,64 @@ header {
   }
 
   &__toggler {
+    display: block;
+    cursor: pointer;
+    padding: 1.5rem 4rem 1.5rem 0rem;
+    height: 4rem;
+    width: 5rem;
     text-decoration: none;
-    color: black;
     margin-right: 4%;
     z-index: 1;
+           
+      @media only screen and (min-width: $breakpoint-medium){
+        display: none;
+      }
 
-      &--link {
-        text-decoration: none;
-        color: black;
+      span,
+      span:before,
+      span:after {
+        cursor: pointer;
+        border-radius: 1px;
+        height: 0.65rem;
+        width: 5rem;
+        background: black;
+        position: absolute;
+        display: block;
+        content: '';
+        transition: all 300ms ease-in-out;
+      }
+      span:before {
+        top: -1rem;
+      }
+      span:after {
+        bottom: -1rem;
       }
       
-      @media only screen and (min-width: $breakpoint-medium){
-      display: none;
+      .active {
+        background-color: transparent;
+        &:before,
+        &:after {
+          top: 0;
+        }
+        &:before {
+          transform: rotate(45deg);
+        }
+        &:after {
+          transform: rotate(-45deg);
+        }
       }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
