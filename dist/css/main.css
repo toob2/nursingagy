@@ -4,6 +4,14 @@
   100% {
     opacity: 1; } }
 
+@keyframes burger {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1); } }
+
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
  * Since `*` has a specificity of 0, it does not override the `html` value
@@ -51,7 +59,7 @@ body {
   font: 66%; }
 
 header {
-  height: 10rem;
+  height: 8rem;
   background-color: #b7b8b9;
   color: #000;
   font-size: 2rem; }
@@ -80,7 +88,7 @@ header {
         height: 100%; } }
     .nav__list--mobile {
       list-style-type: none;
-      background-color: #b7b8b9;
+      background-image: linear-gradient(to right bottom, #b7b8b9, #8e8e8f, #717172);
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -142,32 +150,47 @@ header {
     @media only screen and (min-width: 768px) {
       .nav__toggler {
         display: none; } }
-    .nav__toggler span,
-    .nav__toggler span:before,
-    .nav__toggler span:after {
-      cursor: pointer;
-      border-radius: 1px;
-      height: 0.65rem;
-      width: 5rem;
-      background: black;
-      position: absolute;
-      display: block;
+  .nav__burger {
+    content: '';
+    position: absolute;
+    height: 1rem;
+    width: 5rem;
+    background-color: #000; }
+    .nav__burger::before {
       content: '';
-      transition: all 300ms ease-in-out; }
-    .nav__toggler span:before {
-      top: -1rem; }
-    .nav__toggler span:after {
-      bottom: -1rem; }
-    .nav__toggler .active {
-      background-color: transparent; }
-      .nav__toggler .active:before, .nav__toggler .active:after {
-        top: 0; }
-      .nav__toggler .active:before {
-        transform: rotate(45deg); }
-      .nav__toggler .active:after {
-        transform: rotate(-45deg); }
+      position: absolute;
+      height: 1rem;
+      width: 5rem;
+      background-color: #000;
+      top: -2rem;
+      transition: all 250ms ease-in-out; }
+    .nav__burger::after {
+      content: '';
+      position: absolute;
+      height: 1rem;
+      width: 5rem;
+      background-color: #000;
+      bottom: -2rem;
+      transition: all 250ms ease-in-out; }
+  .nav__burger--active {
+    background-color: transparent;
+    animation: burger 400ms forwards; }
+    .nav__burger--active::before, .nav__burger--active::after {
+      top: 0; }
+    .nav__burger--active::before {
+      transform: rotate(45deg); }
+    .nav__burger--active::after {
+      transform: rotate(-45deg); }
 
 .section-landing {
-  padding-top: 10rem;
-  background-color: red;
-  background-image: url(images/main.jpg); }
+  width: 100%;
+  height: 90vh;
+  font-size: 5rem;
+  background-image: url(../../../app/images/main.jpg);
+  background-size: cover;
+  background-position: top left; }
+  @media only screen and (min-width: 768px) {
+    .section-landing {
+      background-image: url(../../../app/images/mainBig.jpg);
+      background-size: cover;
+      background-position: top center; } }
