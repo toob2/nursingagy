@@ -1,7 +1,22 @@
-/**
- * Basic typography style for copy text
- */
-body {
-  color: black;
-  font: 66%;
+.heading-primary {
+  color: $color-black;
+   
+    &--main {
+      display: block;
+      margin-left: 2rem;
+      font-family: $font-secondary;
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: 0.15rem;
+    }
+
+    &--sub {
+      display: block;
+      margin-left: 6rem;
+      margin-top: 0.4rem;
+      font-family: $font-secondary;
+      font-size: 1.65rem;
+      font-weight: 600;
+      letter-spacing: 0.02rem;
+    }
 }

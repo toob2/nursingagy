@@ -1,27 +1,42 @@
 header {
-  height: 8rem;
-  background-color: transparent;
-  color: $color-black;
+  height: $header-height;
+  width: 100%;
+  background-color:transparent;
+  position: fixed;
+  top: 0;
+  color: $color-logo;
   font-size: 2.2rem;
+  z-index: 5;
 }
 
 .nav {
+  position: fixed;
+  top: 0;
   height: 100%;
   display: flex; 
   justify-content: space-between;
   align-items: center;
   position: relative;
-    
+     
     @media only screen and (min-width: $breakpoint-medium){
       width: 80%;
       margin: 0% auto;
     }
 
   &__logo {
-    margin-left: 3%;
-    font-size: 5rem;
+    height: calc(0.65*#{$header-height});
+    padding-left: 1.5rem; 
+    padding-top: 0.25rem;    
   }
 
+  &__logo-text {
+    letter-spacing: 0.3rem;
+    padding-left: 0.65rem;
+    font-weight: 400;
+    color: $color-logo;
+    font-size: calc(0.2*#{$header-height});
+  }
+  
   &__list {
     display: none;
             
@@ -48,9 +63,10 @@ header {
       top: 0;
       height: 100%;
       animation: dropDown 0.5s ease-out;
-      padding-top: 28rem; 
-      font-size: 4rem;
-
+      padding-top: 27rem; 
+      font-size: 3rem;
+      
+            
         @media only screen and (max-height: 670px) {
           padding-top: 22rem; 
         }
@@ -85,7 +101,7 @@ header {
 
   &__link {
     text-decoration: none;
-    color: black;
+    color: $color-text-nav;
     width: 100vw;
     padding: 0 1rem;
     transition: all 200ms ease-in-out;
@@ -94,17 +110,18 @@ header {
       width: 100%;
       display: flex;
       align-items: center;
-      
     }
     
     &:hover {
       background-color: $color-primary;
       transform: scale(1.15);
     }
-       
       &--logo {
+        height: $header-height;
         text-decoration: none;
         color: black; 
+        display: flex;
+        align-items: center;
       }
   }
 
@@ -112,11 +129,11 @@ header {
     display: block;
     cursor: pointer;
     padding: 1.5rem 4rem 1.5rem 0rem;
-    height: 4rem;
-    width: 5rem;
+    height: $burger-line-height;
+    width: $burger-line-width;
     text-decoration: none;
     margin-right: 4%;
-    z-index: 1;
+    z-index: 10;
            
       @media only screen and (min-width: $breakpoint-medium){
         display: none;
@@ -126,27 +143,27 @@ header {
   &__burger {
     content: '';
     position: absolute;
-    height: 1rem;
-    width: 5rem;
-    background-color: $color-black;
+    height: $burger-line-height;
+    width: $burger-line-width;
+    background-color: $color-logo;
     
       &::before {
         content: '';
         position: absolute;
-        height: 1rem;
-        width: 5rem;
-        background-color: $color-black;
-        top: -2rem;
+        height: $burger-line-height;
+        width: $burger-line-width;
+        background-color: $color-logo;
+        top: -1.5rem;
         transition: all 250ms ease-in-out;
       }
 
       &::after {
         content: '';
         position: absolute;
-        height: 1rem;
-        width: 5rem;
-        background-color: $color-black;
-        bottom: -2rem;
+        height: $burger-line-height;
+        width: $burger-line-width;
+        background-color: $color-logo;
+        bottom: -1.5rem;
         transition: all 250ms ease-in-out;
       }
   }
@@ -157,11 +174,9 @@ header {
     &::before, &::after {
       top: 0;
     }
-
     &::before {
       transform: rotate(45deg)
     }
-
     &::after {
       transform: rotate(-45deg)
     }      

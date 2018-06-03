@@ -51,20 +51,37 @@ html {
 .u-margin-bottom-small {
   margin-bottom: 1.5rem; }
 
-/**
- * Basic typography style for copy text
- */
-body {
-  color: black;
-  font: 66%; }
+.heading-primary {
+  color: #2e3135; }
+  .heading-primary--main {
+    display: block;
+    margin-left: 2rem;
+    font-family: "Lato", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 0.15rem; }
+  .heading-primary--sub {
+    display: block;
+    margin-left: 6rem;
+    margin-top: 0.4rem;
+    font-family: "Lato", sans-serif;
+    font-size: 1.65rem;
+    font-weight: 600;
+    letter-spacing: 0.02rem; }
 
 header {
-  height: 8rem;
+  height: 12vh;
+  width: 100%;
   background-color: transparent;
-  color: #000;
-  font-size: 2.2rem; }
+  position: fixed;
+  top: 0;
+  color: #324050;
+  font-size: 2.2rem;
+  z-index: 5; }
 
 .nav {
+  position: fixed;
+  top: 0;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -75,8 +92,15 @@ header {
       width: 80%;
       margin: 0% auto; } }
   .nav__logo {
-    margin-left: 3%;
-    font-size: 5rem; }
+    height: calc(0.65*12vh);
+    padding-left: 1.5rem;
+    padding-top: 0.25rem; }
+  .nav__logo-text {
+    letter-spacing: 0.3rem;
+    padding-left: 0.65rem;
+    font-weight: 400;
+    color: #324050;
+    font-size: calc(0.2*12vh); }
   .nav__list {
     display: none; }
     @media only screen and (min-width: 768px) {
@@ -88,7 +112,7 @@ header {
         height: 100%; } }
     .nav__list--mobile {
       list-style-type: none;
-      background-image: linear-gradient(to right bottom, #dbe1e4, #bfc3c7, #aaaeb4);
+      background-image: linear-gradient(to right bottom, #eeeeee, #bfc3c7, #aaaeb4);
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -97,8 +121,8 @@ header {
       top: 0;
       height: 100%;
       animation: dropDown 0.5s ease-out;
-      padding-top: 28rem;
-      font-size: 4rem; }
+      padding-top: 27rem;
+      font-size: 3rem; }
       @media only screen and (max-height: 670px) {
         .nav__list--mobile {
           padding-top: 22rem; } }
@@ -126,7 +150,7 @@ header {
         justify-content: flex-end; } }
   .nav__link {
     text-decoration: none;
-    color: black;
+    color: #2a2c2c;
     width: 100vw;
     padding: 0 1rem;
     transition: all 200ms ease-in-out; }
@@ -136,44 +160,47 @@ header {
         display: flex;
         align-items: center; } }
     .nav__link:hover {
-      background-color: #dbe1e4;
+      background-color: #eeeeee;
       transform: scale(1.15); }
     .nav__link--logo {
+      height: 12vh;
       text-decoration: none;
-      color: black; }
+      color: black;
+      display: flex;
+      align-items: center; }
   .nav__toggler {
     display: block;
     cursor: pointer;
     padding: 1.5rem 4rem 1.5rem 0rem;
-    height: 4rem;
+    height: 0.45rem;
     width: 5rem;
     text-decoration: none;
     margin-right: 4%;
-    z-index: 1; }
+    z-index: 10; }
     @media only screen and (min-width: 768px) {
       .nav__toggler {
         display: none; } }
   .nav__burger {
     content: '';
     position: absolute;
-    height: 1rem;
+    height: 0.45rem;
     width: 5rem;
-    background-color: #000; }
+    background-color: #324050; }
     .nav__burger::before {
       content: '';
       position: absolute;
-      height: 1rem;
+      height: 0.45rem;
       width: 5rem;
-      background-color: #000;
-      top: -2rem;
+      background-color: #324050;
+      top: -1.5rem;
       transition: all 250ms ease-in-out; }
     .nav__burger::after {
       content: '';
       position: absolute;
-      height: 1rem;
+      height: 0.45rem;
       width: 5rem;
-      background-color: #000;
-      bottom: -2rem;
+      background-color: #324050;
+      bottom: -1.5rem;
       transition: all 250ms ease-in-out; }
   .nav__burger--active {
     background-color: transparent;
@@ -188,12 +215,19 @@ header {
 .section-landing {
   width: 100%;
   height: 100vh;
-  font-size: 5rem;
   background-image: url(../../../app/images/main.jpg);
   background-size: cover;
-  background-position: top left; }
+  background-position: top left;
+  position: relative; }
+  .section-landing__text-box {
+    position: absolute;
+    width: 100%;
+    bottom: 7%; }
   @media only screen and (min-width: 768px) {
     .section-landing {
       background-image: url(../../../app/images/mainBig.jpg);
       background-size: cover;
-      background-position: top center; } }
+      background-position: left; } }
+
+.testimonials {
+  height: 500rem; }
