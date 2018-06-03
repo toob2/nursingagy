@@ -1,13 +1,15 @@
 .heading-primary {
   color: $color-black;
-   
+    
     &--main {
       display: block;
       margin-left: 2rem;
       font-family: $font-secondary;
-      font-size: 3.5rem;
-      font-weight: 800;
-      letter-spacing: 0.15rem;
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: 0.10rem;
+      animation: moveInRight 1500ms ease-in-out 200ms;
+      
     }
 
     &--sub {
@@ -18,5 +20,6 @@
       font-size: 1.65rem;
       font-weight: 600;
       letter-spacing: 0.02rem;
+      animation: moveInBottom 1500ms ease-in-out 200ms;
     }
 }
