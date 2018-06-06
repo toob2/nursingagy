@@ -155,7 +155,7 @@ header {
         width: $burger-line-width;
         background-color: $color-logo;
         top: -1.1rem;
-        transition: all 250ms ease-in-out;
+        transition: all 275ms ease-in-out;
       }
 
       &::after {
@@ -165,7 +165,7 @@ header {
         width: $burger-line-width;
         background-color: $color-logo;
         bottom: -1.1rem;
-        transition: all 250ms ease-in-out;
+        transition: all 275ms ease-in-out;
       }
   }
 
